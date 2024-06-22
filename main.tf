@@ -1,8 +1,7 @@
-module "wordpress" {
-  source    = "farrukh90/release2/helm"
-  namespace = "default"
-  name      = "wordpress"
-  wait      = false
-  chart     = "./application"
-  values = []
+resource "helm_release" "this" {
+  namespace = var.namespace
+  name      = var.name
+  chart     = var.chart
+  wait      = var.wait
+  values    = var.values
 }
