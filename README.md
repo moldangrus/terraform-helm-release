@@ -1,16 +1,14 @@
 # Usage
 ### Please add the following code
 '''
-module app {
+module "app" {
   source = "./module"
   namespace = "default"
   name = "wordpress"
   wait = false
   chart = "./application"
   values = [<<EOF
-
 replicaCount: 3
-
 image:
   repository: wordpress
   pullPolicy: IfNotPresent
