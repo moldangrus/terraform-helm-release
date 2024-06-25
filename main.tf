@@ -1,8 +1,5 @@
-# Usage
-### Please add the following code
-```
 module "app" {
-  source    = "moldangrus/release2/helm"
+  source    = "./module"
   namespace = "default"
   name      = "wordpress"
   wait      = false
@@ -12,9 +9,10 @@ replicaCount: 3
 image:
   repository: wordpress
   pullPolicy: IfNotPresent
-  # Override this image tag whose default is the chart appVersion.
+  # Overrides the image tag whose default is the chart appVersion.
   tag: "latest"
+
   EOF
   ]
 }
-```
+ 
